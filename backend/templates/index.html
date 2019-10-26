@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container-center">
+        <div class="page-header">
+            <h1>Welcome to Celtic families register!</h1>
+        </div>
+        <div class="button-group">
+            <a href="{{ url_for('home.register') }}"><input type="button" class="btn btn-primary btn-lg" value="Register Celtic"></a>
+
+            <a href="{{ url_for('home.list') }}"><input type="button" class="btn btn-primary btn-lg" value="Celtic List"></a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="page-header">
+    <h1>Celtic List/h1>
+</div>
+<div class="table-responsive-xl">
+    <table  class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Wars</th>
+                <th>Properties</th>
+                <th>TImes</th>
+            </tr>
+        </thead>
+        {% for celtic in celtics %}
+            <tbody>
+                <tr>
+                    <td>{{ celtic._id }}</td>
+                    <td>{{ celtic.name }}</td>
+                    <td>{{ celtic.location }}</td>
+                    <td>{{ celtic.wars }}</td>
+                    <td>{{ celtic.properties }}</td>
+                    <td>{{ celtic.times }}</td>
+                    <td><a href="/delete/{{ celtic._id }}">Delete</a></td>
+                    <td><a href="/update/{{ celtic._id }}">Update</a></td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table><br>
+    <a href="{{ url_for('home.home') }}"><input type="button" class="btn btn-primary btn-lg" value="Voltar"></a>
+</div>    
+{% endblock %}
